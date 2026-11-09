@@ -1,7 +1,5 @@
 --[[
-    OnyxHub Themes Module
-    - purple, negro, halloween
-    - Halloween = mismo fondo + efectos exactos de Vegas (sin transparencia)
+    OnyxHub Themes Module - Halloween con efectos Vegas (corregido)
 ]]
 
 local TweenService = game:GetService("TweenService")
@@ -10,88 +8,88 @@ local UserInputService = game:GetService("UserInputService")
 
 local Themes = {
     purple = {
-        Name             = "purple",
-        MainColor        = Color3.fromRGB(150, 100, 255),
-        MainColorLight   = Color3.fromRGB(200, 150, 255),
-        BgDeep           = Color3.fromRGB(25, 15, 35),
-        BgMain           = Color3.fromRGB(30, 20, 40),
-        BgPanel          = Color3.fromRGB(40, 30, 55),
-        BgItem           = Color3.fromRGB(35, 25, 45),
-        BgHover          = Color3.fromRGB(45, 35, 55),
-        BgTabOff         = Color3.fromRGB(50, 40, 65),
-        BgTabOn          = Color3.fromRGB(80, 60, 100),
-        BgToggleOff      = Color3.fromRGB(60, 50, 70),
-        BgIcon           = Color3.fromRGB(60, 45, 80),
-        BgIconHover      = Color3.fromRGB(80, 65, 100),
-        BgOpenCloseOff   = Color3.fromRGB(50, 35, 65),
-        BgScrollbar      = Color3.fromRGB(120, 100, 150),
-        BgGradientStart  = Color3.fromRGB(50, 40, 70),
-        BgGradientEnd    = Color3.fromRGB(35, 25, 50),
-        BgTaskHover      = Color3.fromRGB(50, 40, 75),
-        TextMain         = Color3.fromRGB(245, 235, 255),
-        TextBright       = Color3.fromRGB(250, 240, 255),
-        TextSub          = Color3.fromRGB(220, 210, 230),
-        TextDim          = Color3.fromRGB(200, 200, 200),
-        TextLabel        = Color3.fromRGB(240, 230, 250),
+        Name = "purple",
+        MainColor = Color3.fromRGB(150, 100, 255),
+        MainColorLight = Color3.fromRGB(200, 150, 255),
+        BgDeep = Color3.fromRGB(25, 15, 35),
+        BgMain = Color3.fromRGB(30, 20, 40),
+        BgPanel = Color3.fromRGB(40, 30, 55),
+        BgItem = Color3.fromRGB(35, 25, 45),
+        BgHover = Color3.fromRGB(45, 35, 55),
+        BgTabOff = Color3.fromRGB(50, 40, 65),
+        BgTabOn = Color3.fromRGB(80, 60, 100),
+        BgToggleOff = Color3.fromRGB(60, 50, 70),
+        BgIcon = Color3.fromRGB(60, 45, 80),
+        BgIconHover = Color3.fromRGB(80, 65, 100),
+        BgOpenCloseOff = Color3.fromRGB(50, 35, 65),
+        BgScrollbar = Color3.fromRGB(120, 100, 150),
+        BgGradientStart = Color3.fromRGB(50, 40, 70),
+        BgGradientEnd = Color3.fromRGB(35, 25, 50),
+        BgTaskHover = Color3.fromRGB(50, 40, 75),
+        TextMain = Color3.fromRGB(245, 235, 255),
+        TextBright = Color3.fromRGB(250, 240, 255),
+        TextSub = Color3.fromRGB(220, 210, 230),
+        TextDim = Color3.fromRGB(200, 200, 200),
+        TextLabel = Color3.fromRGB(240, 230, 250),
     },
 
     negro = {
-        Name             = "negro",
-        MainColor        = Color3.fromRGB(160, 160, 160),
-        MainColorLight   = Color3.fromRGB(210, 210, 210),
-        BgDeep           = Color3.fromRGB(15, 15, 15),
-        BgMain           = Color3.fromRGB(20, 20, 20),
-        BgPanel          = Color3.fromRGB(32, 32, 32),
-        BgItem           = Color3.fromRGB(28, 28, 28),
-        BgHover          = Color3.fromRGB(42, 42, 42),
-        BgTabOff         = Color3.fromRGB(42, 42, 42),
-        BgTabOn          = Color3.fromRGB(85, 85, 85),
-        BgToggleOff      = Color3.fromRGB(55, 55, 55),
-        BgIcon           = Color3.fromRGB(55, 55, 55),
-        BgIconHover      = Color3.fromRGB(75, 75, 75),
-        BgOpenCloseOff   = Color3.fromRGB(45, 45, 45),
-        BgScrollbar      = Color3.fromRGB(100, 100, 100),
-        BgGradientStart  = Color3.fromRGB(45, 45, 45),
-        BgGradientEnd    = Color3.fromRGB(25, 25, 25),
-        BgTaskHover      = Color3.fromRGB(55, 55, 55),
-        TextMain         = Color3.fromRGB(240, 240, 240),
-        TextBright       = Color3.fromRGB(255, 255, 255),
-        TextSub          = Color3.fromRGB(200, 200, 200),
-        TextDim          = Color3.fromRGB(180, 180, 180),
-        TextLabel        = Color3.fromRGB(230, 230, 230),
+        Name = "negro",
+        MainColor = Color3.fromRGB(160, 160, 160),
+        MainColorLight = Color3.fromRGB(210, 210, 210),
+        BgDeep = Color3.fromRGB(15, 15, 15),
+        BgMain = Color3.fromRGB(20, 20, 20),
+        BgPanel = Color3.fromRGB(32, 32, 32),
+        BgItem = Color3.fromRGB(28, 28, 28),
+        BgHover = Color3.fromRGB(42, 42, 42),
+        BgTabOff = Color3.fromRGB(42, 42, 42),
+        BgTabOn = Color3.fromRGB(85, 85, 85),
+        BgToggleOff = Color3.fromRGB(55, 55, 55),
+        BgIcon = Color3.fromRGB(55, 55, 55),
+        BgIconHover = Color3.fromRGB(75, 75, 75),
+        BgOpenCloseOff = Color3.fromRGB(45, 45, 45),
+        BgScrollbar = Color3.fromRGB(100, 100, 100),
+        BgGradientStart = Color3.fromRGB(45, 45, 45),
+        BgGradientEnd = Color3.fromRGB(25, 25, 25),
+        BgTaskHover = Color3.fromRGB(55, 55, 55),
+        TextMain = Color3.fromRGB(240, 240, 240),
+        TextBright = Color3.fromRGB(255, 255, 255),
+        TextSub = Color3.fromRGB(200, 200, 200),
+        TextDim = Color3.fromRGB(180, 180, 180),
+        TextLabel = Color3.fromRGB(230, 230, 230),
     },
 
     halloween = {
-        Name             = "halloween",
-        MainColor        = Color3.fromRGB(255, 140, 30),
-        MainColorLight   = Color3.fromRGB(255, 190, 70),
-        BgDeep           = Color3.fromRGB(18, 8, 6),
-        BgMain           = Color3.fromRGB(28, 14, 10),
-        BgPanel          = Color3.fromRGB(48, 24, 16),
-        BgItem           = Color3.fromRGB(42, 20, 14),
-        BgHover          = Color3.fromRGB(62, 32, 20),
-        BgTabOff         = Color3.fromRGB(55, 28, 18),
-        BgTabOn          = Color3.fromRGB(120, 55, 25),
-        BgToggleOff      = Color3.fromRGB(70, 40, 28),
-        BgIcon           = Color3.fromRGB(70, 38, 22),
-        BgIconHover      = Color3.fromRGB(100, 55, 30),
-        BgOpenCloseOff   = Color3.fromRGB(50, 25, 15),
-        BgScrollbar      = Color3.fromRGB(180, 90, 40),
-        BgGradientStart  = Color3.fromRGB(78, 34, 14),
-        BgGradientEnd    = Color3.fromRGB(36, 16, 14),
-        BgTaskHover      = Color3.fromRGB(90, 45, 25),
-        TextMain         = Color3.fromRGB(255, 240, 220),
-        TextBright       = Color3.fromRGB(255, 255, 255),
-        TextSub          = Color3.fromRGB(220, 180, 140),
-        TextDim          = Color3.fromRGB(190, 150, 120),
-        TextLabel        = Color3.fromRGB(255, 220, 180),
+        Name = "halloween",
+        MainColor = Color3.fromRGB(255, 140, 30),
+        MainColorLight = Color3.fromRGB(255, 190, 70),
+        BgDeep = Color3.fromRGB(18, 8, 6),
+        BgMain = Color3.fromRGB(28, 14, 10),
+        BgPanel = Color3.fromRGB(48, 24, 16),
+        BgItem = Color3.fromRGB(42, 20, 14),
+        BgHover = Color3.fromRGB(62, 32, 20),
+        BgTabOff = Color3.fromRGB(55, 28, 18),
+        BgTabOn = Color3.fromRGB(120, 55, 25),
+        BgToggleOff = Color3.fromRGB(70, 40, 28),
+        BgIcon = Color3.fromRGB(70, 38, 22),
+        BgIconHover = Color3.fromRGB(100, 55, 30),
+        BgOpenCloseOff = Color3.fromRGB(50, 25, 15),
+        BgScrollbar = Color3.fromRGB(180, 90, 40),
+        BgGradientStart = Color3.fromRGB(78, 34, 14),
+        BgGradientEnd = Color3.fromRGB(36, 16, 14),
+        BgTaskHover = Color3.fromRGB(90, 45, 25),
+        TextMain = Color3.fromRGB(255, 240, 220),
+        TextBright = Color3.fromRGB(255, 255, 255),
+        TextSub = Color3.fromRGB(220, 180, 140),
+        TextDim = Color3.fromRGB(190, 150, 120),
+        TextLabel = Color3.fromRGB(255, 220, 180),
     },
 }
 
 local Aliases = {
-    purple  = "purple", morado = "purple", default = "purple", violeta = "purple",
+    purple = "purple", morado = "purple", default = "purple", violeta = "purple",
     ["púrpura"] = "purple", purplee = "purple",
-    negro   = "negro", black = "negro", dark = "negro", oscuro = "negro",
+    negro = "negro", black = "negro", dark = "negro", oscuro = "negro",
     gray = "negro", grey = "negro", gris = "negro", night = "negro",
     halloween = "halloween", naranja = "halloween", orange = "halloween",
     pumpkin = "halloween", spooky = "halloween", vegas = "halloween",
@@ -102,9 +100,6 @@ local function GetTheme(name)
     return Themes[key] or Themes.purple
 end
 
--- ─────────────────────────────────────────────────────────────
--- EFECTOS (solo halloween) - Fondo sólido igual a Vegas
--- ─────────────────────────────────────────────────────────────
 local activeEffects = {
     connections = {},
     instances = {},
@@ -140,26 +135,34 @@ end
 local function ApplyThemeEffects(theme, mainFrame)
     clearEffects()
     if not mainFrame or not mainFrame.Parent then return end
-
-    -- Solo halloween tiene los efectos de Vegas
-    if not theme or theme.Name ~= "halloween" then
-        return
-    end
+    if not theme or theme.Name ~= "halloween" then return end
 
     local isMobile = UserInputService.TouchEnabled and not UserInputService.KeyboardEnabled
     local C = {
         Orange = theme.MainColor,
-        Red    = Color3.fromRGB(205, 35, 45),
-        White  = Color3.fromRGB(255, 255, 255),
+        Red = Color3.fromRGB(205, 35, 45),
+        White = Color3.fromRGB(255, 255, 255),
     }
 
     -------------------------------------------------
-    -- 1. FORZAR FONDO SÓLIDO (igual que Vegas)
+    -- FRAME DE FONDO COMPLETO (detrás de TODO)
     -------------------------------------------------
-    mainFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255) -- blanco base para que el gradiente se vea bien
-    mainFrame.BackgroundTransparency = 0                      -- SIN transparencia
+    local bgLayer = Instance.new("Frame")
+    bgLayer.Name = "ThemeBackground"
+    bgLayer.Size = UDim2.new(1, 0, 1, 0)
+    bgLayer.Position = UDim2.new(0, 0, 0, 0)
+    bgLayer.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    bgLayer.BackgroundTransparency = 0
+    bgLayer.BorderSizePixel = 0
+    bgLayer.ZIndex = 0
+    bgLayer.ClipsDescendants = true
+    bgLayer.Parent = mainFrame
+    table.insert(activeEffects.instances, bgLayer)
 
-    -- Gradiente cálido exacto de Vegas
+    -- Hacer el MainFrame transparente para que se vea el bgLayer
+    mainFrame.BackgroundTransparency = 1
+
+    -- Gradiente exacto de Vegas
     local bgGrad = Instance.new("UIGradient")
     bgGrad.Rotation = 90
     bgGrad.Color = ColorSequence.new({
@@ -167,11 +170,10 @@ local function ApplyThemeEffects(theme, mainFrame)
         ColorSequenceKeypoint.new(0.5, Color3.fromRGB(36, 16, 14)),
         ColorSequenceKeypoint.new(1, Color3.fromRGB(100, 38, 12)),
     })
-    bgGrad.Parent = mainFrame
-    table.insert(activeEffects.instances, bgGrad)
+    bgGrad.Parent = bgLayer
 
     -------------------------------------------------
-    -- 2. Borde animado naranja/rojo
+    -- Borde animado (en el MainFrame)
     -------------------------------------------------
     local border = Instance.new("UIStroke")
     border.Thickness = 2.8
@@ -189,16 +191,16 @@ local function ApplyThemeEffects(theme, mainFrame)
     loopTween(borderGrad, 6, { Rotation = 360 })
 
     -------------------------------------------------
-    -- 3. Glow inferior
+    -- Glow inferior
     -------------------------------------------------
     local glow = Instance.new("Frame")
     glow.Name = "ThemeGlow"
-    glow.Size = UDim2.new(1, 0, 0, 110)
-    glow.Position = UDim2.new(0, 0, 1, -110)
+    glow.Size = UDim2.new(1, 0, 0, 120)
+    glow.Position = UDim2.new(0, 0, 1, -120)
     glow.BackgroundColor3 = C.Orange
     glow.BorderSizePixel = 0
-    glow.ZIndex = 0
-    glow.Parent = mainFrame
+    glow.ZIndex = 1
+    glow.Parent = bgLayer
     table.insert(activeEffects.instances, glow)
 
     local gCorner = Instance.new("UICorner")
@@ -209,20 +211,20 @@ local function ApplyThemeEffects(theme, mainFrame)
     glowGrad.Rotation = 90
     glowGrad.Transparency = NumberSequence.new({
         NumberSequenceKeypoint.new(0, 1),
-        NumberSequenceKeypoint.new(1, 0.55),
+        NumberSequenceKeypoint.new(1, 0.5),
     })
     glowGrad.Parent = glow
 
     -------------------------------------------------
-    -- 4. Luz superior
+    -- Luz superior
     -------------------------------------------------
     local topLight = Instance.new("Frame")
     topLight.Name = "ThemeTopLight"
-    topLight.Size = UDim2.new(1, 0, 0, 80)
+    topLight.Size = UDim2.new(1, 0, 0, 90)
     topLight.BackgroundColor3 = Color3.fromRGB(255, 190, 50)
     topLight.BorderSizePixel = 0
-    topLight.ZIndex = 0
-    topLight.Parent = mainFrame
+    topLight.ZIndex = 1
+    topLight.Parent = bgLayer
     table.insert(activeEffects.instances, topLight)
 
     local tlCorner = Instance.new("UICorner")
@@ -232,21 +234,21 @@ local function ApplyThemeEffects(theme, mainFrame)
     local tlGrad = Instance.new("UIGradient")
     tlGrad.Rotation = 90
     tlGrad.Transparency = NumberSequence.new({
-        NumberSequenceKeypoint.new(0, 0.82),
+        NumberSequenceKeypoint.new(0, 0.8),
         NumberSequenceKeypoint.new(1, 1),
     })
     tlGrad.Parent = topLight
 
     -------------------------------------------------
-    -- 5. Contenedor de partículas
+    -- Partículas (embers + pumpkins)
     -------------------------------------------------
     local dots = Instance.new("Frame")
     dots.Name = "ThemeParticles"
     dots.Size = UDim2.new(1, 0, 1, 0)
     dots.BackgroundTransparency = 1
-    dots.ZIndex = 1
+    dots.ZIndex = 2
     dots.ClipsDescendants = true
-    dots.Parent = mainFrame
+    dots.Parent = bgLayer
     table.insert(activeEffects.instances, dots)
 
     local rng = Random.new()
@@ -256,21 +258,21 @@ local function ApplyThemeEffects(theme, mainFrame)
     local function randomFlow()
         local roll = rng:NextNumber()
         local side = roll < 0.4 and 1 or (roll < 0.6 and 2 or (roll < 0.8 and 3 or 4))
-        local t0 = rng:NextNumber(0.06, 0.94)
-        local t1 = math.clamp(t0 + rng:NextNumber(-0.25, 0.25), 0.05, 0.95)
+        local t0 = rng:NextNumber(0.05, 0.95)
+        local t1 = math.clamp(t0 + rng:NextNumber(-0.3, 0.3), 0.05, 0.95)
         if side == 1 then
-            return UDim2.fromScale(t0, 1.05), UDim2.fromScale(t1, -0.05)
+            return UDim2.fromScale(t0, 1.08), UDim2.fromScale(t1, -0.08)
         elseif side == 2 then
-            return UDim2.fromScale(t0, -0.05), UDim2.fromScale(t1, 1.05)
+            return UDim2.fromScale(t0, -0.08), UDim2.fromScale(t1, 1.08)
         elseif side == 3 then
-            return UDim2.fromScale(-0.05, t0), UDim2.fromScale(1.05, t1)
+            return UDim2.fromScale(-0.08, t0), UDim2.fromScale(1.08, t1)
         else
-            return UDim2.fromScale(1.05, t0), UDim2.fromScale(-0.05, t1)
+            return UDim2.fromScale(1.08, t0), UDim2.fromScale(-0.08, t1)
         end
     end
 
-    -- Embers (más cantidad para que se vea igual a Vegas)
-    local emberCount = isMobile and 22 or 52
+    -- Embers
+    local emberCount = isMobile and 28 or 60
     for i = 1, emberCount do
         local size = rng:NextInteger(3, 7)
         local dot = Instance.new("Frame")
@@ -279,7 +281,7 @@ local function ApplyThemeEffects(theme, mainFrame)
         dot.BackgroundColor3 = EMBER_COLORS[(i % 3) + 1]
         dot.BackgroundTransparency = 1
         dot.BorderSizePixel = 0
-        dot.ZIndex = 1
+        dot.ZIndex = 2
         dot.Parent = dots
 
         local dc = Instance.new("UICorner")
@@ -290,11 +292,11 @@ local function ApplyThemeEffects(theme, mainFrame)
             task.wait(rng:NextNumber(0, 4))
             while dot and dot.Parent do
                 local from, to = randomFlow()
-                local dur = rng:NextNumber(7.5, 13)
+                local dur = rng:NextNumber(7, 13)
                 dot.Position = from
                 dot.BackgroundTransparency = 1
                 TweenService:Create(dot, TweenInfo.new(dur, SINE, Enum.EasingDirection.InOut), { Position = to }):Play()
-                TweenService:Create(dot, TweenInfo.new(dur * 0.2, SINE), { BackgroundTransparency = 0.28 }):Play()
+                TweenService:Create(dot, TweenInfo.new(dur * 0.18, SINE), { BackgroundTransparency = 0.25 }):Play()
                 task.wait(dur * 0.7)
                 if not dot.Parent then break end
                 TweenService:Create(dot, TweenInfo.new(dur * 0.3, SINE), { BackgroundTransparency = 1 }):Play()
@@ -303,32 +305,32 @@ local function ApplyThemeEffects(theme, mainFrame)
         end)
     end
 
-    -- Pumpkins 🎃
-    local pumpkinCount = isMobile and 4 or 9
+    -- Pumpkins
+    local pumpkinCount = isMobile and 5 or 10
     for i = 1, pumpkinCount do
         local pumpkin = Instance.new("TextLabel")
         pumpkin.AnchorPoint = Vector2.new(0.5, 0.5)
-        pumpkin.Size = UDim2.fromOffset(30, 30)
+        pumpkin.Size = UDim2.fromOffset(32, 32)
         pumpkin.BackgroundTransparency = 1
         pumpkin.Text = "🎃"
-        pumpkin.TextSize = rng:NextInteger(15, 24)
+        pumpkin.TextSize = rng:NextInteger(16, 26)
         pumpkin.TextTransparency = 1
-        pumpkin.ZIndex = 1
+        pumpkin.ZIndex = 2
         pumpkin.Parent = dots
 
-        local sway = rng:NextNumber(9, 17)
+        local sway = rng:NextNumber(10, 18)
         pumpkin.Rotation = -sway
-        loopTween(pumpkin, rng:NextNumber(2.3, 3.5), { Rotation = sway }, SINE, true)
+        loopTween(pumpkin, rng:NextNumber(2.4, 3.6), { Rotation = sway }, SINE, true)
 
         task.spawn(function()
-            task.wait(rng:NextNumber(0, 5.5))
+            task.wait(rng:NextNumber(0, 6))
             while pumpkin and pumpkin.Parent do
                 local from, to = randomFlow()
                 local dur = rng:NextNumber(12, 18)
                 pumpkin.Position = from
                 pumpkin.TextTransparency = 1
                 TweenService:Create(pumpkin, TweenInfo.new(dur, SINE, Enum.EasingDirection.InOut), { Position = to }):Play()
-                TweenService:Create(pumpkin, TweenInfo.new(dur * 0.15, SINE), { TextTransparency = 0.28 }):Play()
+                TweenService:Create(pumpkin, TweenInfo.new(dur * 0.15, SINE), { TextTransparency = 0.25 }):Play()
                 task.wait(dur * 0.8)
                 if not pumpkin.Parent then break end
                 TweenService:Create(pumpkin, TweenInfo.new(dur * 0.2, SINE), { TextTransparency = 1 }):Play()
@@ -338,7 +340,7 @@ local function ApplyThemeEffects(theme, mainFrame)
     end
 
     -------------------------------------------------
-    -- 6. TELARAÑAS hechas a mano (igual que Vegas)
+    -- TELARAÑAS (más visibles)
     -------------------------------------------------
     local function addLine(parent, x1, y1, x2, y2, thickness)
         local dx, dy = x2 - x1, y2 - y1
@@ -348,9 +350,9 @@ local function ApplyThemeEffects(theme, mainFrame)
         line.Size = UDim2.fromOffset(math.sqrt(dx * dx + dy * dy) + thickness, thickness)
         line.Rotation = math.deg(math.atan2(dy, dx))
         line.BackgroundColor3 = Color3.new(0, 0, 0)
-        line.BackgroundTransparency = 0.25
+        line.BackgroundTransparency = 0.15
         line.BorderSizePixel = 0
-        line.ZIndex = 1
+        line.ZIndex = 3
         line.Parent = parent
 
         local lc = Instance.new("UICorner")
@@ -365,15 +367,15 @@ local function ApplyThemeEffects(theme, mainFrame)
         holder.Position = UDim2.fromScale(anchorX, anchorY)
         holder.Size = UDim2.fromOffset(size, size)
         holder.BackgroundTransparency = 1
-        holder.ZIndex = 1
-        holder.Parent = mainFrame
+        holder.ZIndex = 3
+        holder.Parent = bgLayer
         table.insert(activeEffects.instances, holder)
 
         local sx = anchorX == 0 and 1 or -1
         local sy = anchorY == 0 and 1 or -1
-        local ox = (anchorX == 0 and 0 or size) + sx * 7
-        local oy = (anchorY == 0 and 0 or size) + sy * 7
-        local R = size - 15
+        local ox = (anchorX == 0 and 0 or size) + sx * 6
+        local oy = (anchorY == 0 and 0 or size) + sy * 6
+        local R = size - 14
 
         local function pt(angle, radius)
             return ox + sx * math.cos(angle) * radius, oy + sy * math.sin(angle) * radius
@@ -384,39 +386,35 @@ local function ApplyThemeEffects(theme, mainFrame)
             angles[#angles + 1] = math.rad(i * 22.5)
         end
 
-        -- Rayos principales
         for _, a in ipairs(angles) do
             local x, y = pt(a, R)
-            addLine(holder, ox, oy, x, y, 2.4)
+            addLine(holder, ox, oy, x, y, 2.6)
         end
 
-        -- Anillos curvos
-        for _, f in ipairs({ 0.34, 0.66, 1 }) do
+        for _, f in ipairs({ 0.32, 0.62, 0.95 }) do
             for i = 1, #angles - 1 do
                 local x1, y1 = pt(angles[i], R * f)
                 local x2, y2 = pt(angles[i + 1], R * f)
                 local mx, my = (x1 + x2) / 2, (y1 + y2) / 2
-                local cx = mx + (ox - mx) * 0.3
-                local cy = my + (oy - my) * 0.3
+                local cx = mx + (ox - mx) * 0.32
+                local cy = my + (oy - my) * 0.32
 
                 local px, py = x1, y1
                 for k = 1, 5 do
                     local t = k / 5
                     local nx = (1 - t)^2 * x1 + 2 * (1 - t) * t * cx + t^2 * x2
                     local ny = (1 - t)^2 * y1 + 2 * (1 - t) * t * cy + t^2 * y2
-                    addLine(holder, px, py, nx, ny, 2.4)
+                    addLine(holder, px, py, nx, ny, 2.6)
                     px, py = nx, ny
                 end
             end
         end
     end
 
-    -- Telarañas en las dos esquinas (igual que Vegas)
-    makeWeb(0, 0, 120)   -- arriba izquierda
-    makeWeb(1, 1, 105)   -- abajo derecha
+    makeWeb(0, 0, 130)
+    makeWeb(1, 1, 115)
 end
 
--- Export
 return {
     Themes = Themes,
     GetTheme = GetTheme,
