@@ -1,10 +1,18 @@
+--[[
+    OnyxHub Themes Module
+    - purple, negro, halloween
+    - Halloween = efectos Vegas (fondo transparente)
+]]
+
 local TweenService = game:GetService("TweenService")
 local RunService = game:GetService("RunService")
 local UserInputService = game:GetService("UserInputService")
 
-
+-- ═══════════════════════════════════════════════════════════
+-- 👇 SOLO CAMBIA ESTA LÍNEA
+-- Opciones: "purple" | "negro" | "halloween"
 local DEFAULT_THEME = "halloween"
-
+-- ═══════════════════════════════════════════════════════════
 
 getgenv().OnyxTheme = getgenv().OnyxTheme or DEFAULT_THEME
 
@@ -102,7 +110,9 @@ local function GetTheme(name)
     return Themes[key] or Themes[DEFAULT_THEME] or Themes.purple
 end
 
-
+-- ─────────────────────────────────────────────────────────────
+-- EFECTOS (Halloween) - Fondo transparente
+-- ─────────────────────────────────────────────────────────────
 local activeEffects = {
     connections = {},
     instances = {},
@@ -147,10 +157,7 @@ local function ApplyThemeEffects(theme, mainFrame)
         White  = Color3.fromRGB(255, 255, 255),
     }
 
-    -- Fondo sólido
-    mainFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-    mainFrame.BackgroundTransparency = 0
-
+    -- Gradiente de fondo (transparente, no fuerza opacidad)
     local bgGrad = Instance.new("UIGradient")
     bgGrad.Rotation = 90
     bgGrad.Color = ColorSequence.new({
@@ -163,7 +170,7 @@ local function ApplyThemeEffects(theme, mainFrame)
 
     -- Borde animado
     local border = Instance.new("UIStroke")
-    border.Thickness = 2.8
+    border.Thickness = 2.5
     border.Color = C.White
     border.Parent = mainFrame
     table.insert(activeEffects.instances, border)
@@ -180,8 +187,8 @@ local function ApplyThemeEffects(theme, mainFrame)
     -- Glow inferior
     local glow = Instance.new("Frame")
     glow.Name = "ThemeGlow"
-    glow.Size = UDim2.new(1, 0, 0, 110)
-    glow.Position = UDim2.new(0, 0, 1, -110)
+    glow.Size = UDim2.new(1, 0, 0, 90)
+    glow.Position = UDim2.new(0, 0, 1, -90)
     glow.BackgroundColor3 = C.Orange
     glow.BorderSizePixel = 0
     glow.ZIndex = 0
@@ -196,14 +203,14 @@ local function ApplyThemeEffects(theme, mainFrame)
     glowGrad.Rotation = 90
     glowGrad.Transparency = NumberSequence.new({
         NumberSequenceKeypoint.new(0, 1),
-        NumberSequenceKeypoint.new(1, 0.55),
+        NumberSequenceKeypoint.new(1, 0.65),
     })
     glowGrad.Parent = glow
 
     -- Luz superior
     local topLight = Instance.new("Frame")
     topLight.Name = "ThemeTopLight"
-    topLight.Size = UDim2.new(1, 0, 0, 80)
+    topLight.Size = UDim2.new(1, 0, 0, 70)
     topLight.BackgroundColor3 = Color3.fromRGB(255, 190, 50)
     topLight.BorderSizePixel = 0
     topLight.ZIndex = 0
@@ -217,7 +224,7 @@ local function ApplyThemeEffects(theme, mainFrame)
     local tlGrad = Instance.new("UIGradient")
     tlGrad.Rotation = 90
     tlGrad.Transparency = NumberSequence.new({
-        NumberSequenceKeypoint.new(0, 0.82),
+        NumberSequenceKeypoint.new(0, 0.88),
         NumberSequenceKeypoint.new(1, 1),
     })
     tlGrad.Parent = topLight
@@ -252,9 +259,9 @@ local function ApplyThemeEffects(theme, mainFrame)
         end
     end
 
-    local emberCount = isMobile and 22 or 50
+    local emberCount = isMobile and 18 or 42
     for i = 1, emberCount do
-        local size = rng:NextInteger(3, 7)
+        local size = rng:NextInteger(3, 6)
         local dot = Instance.new("Frame")
         dot.AnchorPoint = Vector2.new(0.5, 0.5)
         dot.Size = UDim2.fromOffset(size, size)
@@ -269,14 +276,14 @@ local function ApplyThemeEffects(theme, mainFrame)
         dc.Parent = dot
 
         task.spawn(function()
-            task.wait(rng:NextNumber(0, 4))
+            task.wait(rng:NextNumber(0, 3.5))
             while dot and dot.Parent do
                 local from, to = randomFlow()
-                local dur = rng:NextNumber(7.5, 13)
+                local dur = rng:NextNumber(7, 12)
                 dot.Position = from
                 dot.BackgroundTransparency = 1
                 TweenService:Create(dot, TweenInfo.new(dur, SINE, Enum.EasingDirection.InOut), { Position = to }):Play()
-                TweenService:Create(dot, TweenInfo.new(dur * 0.2, SINE), { BackgroundTransparency = 0.28 }):Play()
+                TweenService:Create(dot, TweenInfo.new(dur * 0.2, SINE), { BackgroundTransparency = 0.25 }):Play()
                 task.wait(dur * 0.7)
                 if not dot.Parent then break end
                 TweenService:Create(dot, TweenInfo.new(dur * 0.3, SINE), { BackgroundTransparency = 1 }):Play()
@@ -285,31 +292,31 @@ local function ApplyThemeEffects(theme, mainFrame)
         end)
     end
 
-    local pumpkinCount = isMobile and 4 or 9
+    local pumpkinCount = isMobile and 3 or 7
     for i = 1, pumpkinCount do
         local pumpkin = Instance.new("TextLabel")
         pumpkin.AnchorPoint = Vector2.new(0.5, 0.5)
-        pumpkin.Size = UDim2.fromOffset(30, 30)
+        pumpkin.Size = UDim2.fromOffset(28, 28)
         pumpkin.BackgroundTransparency = 1
         pumpkin.Text = "🎃"
-        pumpkin.TextSize = rng:NextInteger(15, 24)
+        pumpkin.TextSize = rng:NextInteger(14, 22)
         pumpkin.TextTransparency = 1
         pumpkin.ZIndex = 1
         pumpkin.Parent = dots
 
-        local sway = rng:NextNumber(9, 17)
+        local sway = rng:NextNumber(8, 16)
         pumpkin.Rotation = -sway
-        loopTween(pumpkin, rng:NextNumber(2.3, 3.5), { Rotation = sway }, SINE, true)
+        loopTween(pumpkin, rng:NextNumber(2.2, 3.4), { Rotation = sway }, SINE, true)
 
         task.spawn(function()
-            task.wait(rng:NextNumber(0, 5.5))
+            task.wait(rng:NextNumber(0, 5))
             while pumpkin and pumpkin.Parent do
                 local from, to = randomFlow()
-                local dur = rng:NextNumber(12, 18)
+                local dur = rng:NextNumber(11, 17)
                 pumpkin.Position = from
                 pumpkin.TextTransparency = 1
                 TweenService:Create(pumpkin, TweenInfo.new(dur, SINE, Enum.EasingDirection.InOut), { Position = to }):Play()
-                TweenService:Create(pumpkin, TweenInfo.new(dur * 0.15, SINE), { TextTransparency = 0.28 }):Play()
+                TweenService:Create(pumpkin, TweenInfo.new(dur * 0.15, SINE), { TextTransparency = 0.25 }):Play()
                 task.wait(dur * 0.8)
                 if not pumpkin.Parent then break end
                 TweenService:Create(pumpkin, TweenInfo.new(dur * 0.2, SINE), { TextTransparency = 1 }):Play()
@@ -327,7 +334,7 @@ local function ApplyThemeEffects(theme, mainFrame)
         line.Size = UDim2.fromOffset(math.sqrt(dx * dx + dy * dy) + thickness, thickness)
         line.Rotation = math.deg(math.atan2(dy, dx))
         line.BackgroundColor3 = Color3.new(0, 0, 0)
-        line.BackgroundTransparency = 0.2
+        line.BackgroundTransparency = 0.35
         line.BorderSizePixel = 0
         line.ZIndex = 1
         line.Parent = parent
@@ -350,9 +357,9 @@ local function ApplyThemeEffects(theme, mainFrame)
 
         local sx = anchorX == 0 and 1 or -1
         local sy = anchorY == 0 and 1 or -1
-        local ox = (anchorX == 0 and 0 or size) + sx * 7
-        local oy = (anchorY == 0 and 0 or size) + sy * 7
-        local R = size - 15
+        local ox = (anchorX == 0 and 0 or size) + sx * 6
+        local oy = (anchorY == 0 and 0 or size) + sy * 6
+        local R = size - 14
 
         local function pt(angle, radius)
             return ox + sx * math.cos(angle) * radius, oy + sy * math.sin(angle) * radius
@@ -365,7 +372,7 @@ local function ApplyThemeEffects(theme, mainFrame)
 
         for _, a in ipairs(angles) do
             local x, y = pt(a, R)
-            addLine(holder, ox, oy, x, y, 2.5)
+            addLine(holder, ox, oy, x, y, 2.2)
         end
 
         for _, f in ipairs({ 0.34, 0.66, 1 }) do
@@ -377,19 +384,19 @@ local function ApplyThemeEffects(theme, mainFrame)
                 local cy = my + (oy - my) * 0.3
 
                 local px, py = x1, y1
-                for k = 1, 5 do
-                    local t = k / 5
+                for k = 1, 4 do
+                    local t = k / 4
                     local nx = (1 - t)^2 * x1 + 2 * (1 - t) * t * cx + t^2 * x2
                     local ny = (1 - t)^2 * y1 + 2 * (1 - t) * t * cy + t^2 * y2
-                    addLine(holder, px, py, nx, ny, 2.5)
+                    addLine(holder, px, py, nx, ny, 2.2)
                     px, py = nx, ny
                 end
             end
         end
     end
 
-    makeWeb(0, 0, 120)
-    makeWeb(1, 1, 105)
+    makeWeb(0, 0, 110)
+    makeWeb(1, 1, 95)
 end
 
 return {
