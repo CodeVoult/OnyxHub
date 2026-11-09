@@ -9,6 +9,8 @@ local TweenService = game:GetService("TweenService")
 local RunService = game:GetService("RunService")
 local UserInputService = game:GetService("UserInputService")
 
+getgenv().OnyxTheme = getgenv().OnyxTheme or "halloween"
+
 local Themes = {
     purple = {
         Name             = "purple",
