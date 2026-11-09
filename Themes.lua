@@ -102,7 +102,7 @@ local function GetTheme(name)
     return Themes[key] or Themes[DEFAULT_THEME] or Themes.purple
 end
 
--
+
 local activeEffects = {
     connections = {},
     instances = {},
